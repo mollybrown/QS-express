@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.js"
+    integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+    crossorigin="anonymous"></script>
+  <script src="./lib/underscore.js"></script>
+  <script src="./lib/moment.min.js"></script>
+  <script src="./lib/foods.js"></script>
+  <script src="./lib/common.js"></script>
+  <link type="text/css" rel="stylesheet" href="./lib/foods.css" >
+  <link type="text/css" rel="stylesheet" href="./lib/common.css" >
+</head>
+<body>
+  <div id="container">
+
+    <h1>Manage Foods</h1>
+
+    <form action="/" method="POST">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="calories" name="calories">
+      <button type="submit">Add Food</button>
+    </form>
+    <br>
+
+    <!-- <div id="create-form">
+      <label id="name-field">Name
+        <input value="sample name">
+        <div class="validation-error"></div>
+      </label>
+      <label id="calories-field">Calories
+        <input value="1010">
+        <div class="validation-error"></div>
+      </label>
+      <button id="add-food">Add Food</button>
+    </div> -->
+
+    <div id="food-filter">
+      <label>Filter by Name
+        <input>
+      </label>
+    </div>
+    <br>
+
+    <h3>Food List</h3>
+    <ul class="food-list">
+      <% for(var i=0; i<foods.length; i++) {%>
+      <li class="food">
+        <span>Food Name: <%= foods[i].name %></span>
+        <span>Calories: <%= foods[i].calories %></span>
+      </li>
+    <% } %>
+    </ul>
+
+    <h1><%= foods %></h1>
+
+    <!-- <table id="food-list">
+      <thead>
+        <tr><th>Name</th><th>Calories</th></tr>
+      </thead>
+      <tbody id="food-items">
+        <tr class="food-row">
+        </tr>
+      </tbody>
+    </table> -->
+
+  </div>
+</body>
